@@ -1,0 +1,15 @@
+{
+  "version": "v2.0.1",
+  "entries": [
+    {
+      "name": "shell-foundation-preview",
+      "trust": "community",
+      "capability": "shell.adapter.operator"
+    },
+    {
+      "name": "wizard-publish-runner",
+      "trust": "local",
+      "capability": "wizard.orchestration.provider"
+    }
+  ]
+}

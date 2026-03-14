@@ -1,9 +1,24 @@
 {
-  "name": "demo-plugin",
-  "version": "0.1.0",
-  "entry": "plugins/demo:main",
+  "name": "shell-foundation-preview",
+  "version": "2.0.1",
+  "capability": "shell.adapter.operator",
+  "trust": "community",
+  "entry": "examples/shell-foundation-preview",
   "capabilities": [
-    "manifest.read",
-    "workflow.assist"
-  ]
+    "shell.adapter.operator",
+    "theme.bridge.shell"
+  ],
+  "compatibility": {
+    "core": "v2.0.1",
+    "shell": "v2.0.1",
+    "wizard": "v2.0.1"
+  },
+  "certification": {
+    "status": "placeholder",
+    "lane": "develop"
+  },
+  "source": {
+    "type": "github",
+    "location": "github.com/udos/examples-shell-foundation-preview"
+  }
 }

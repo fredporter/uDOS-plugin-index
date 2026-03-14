@@ -1,18 +1,24 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "uDOS Plugin Manifest",
+  "title": "uDOS v2 Plugin Manifest",
   "type": "object",
-  "required": [
-    "name",
-    "version",
-    "entry"
-  ],
+  "required": ["name", "version", "capability", "trust"],
   "properties": {
     "name": {
-      "type": "string"
+      "type": "string",
+      "minLength": 1
     },
     "version": {
-      "type": "string"
+      "type": "string",
+      "minLength": 1
+    },
+    "capability": {
+      "type": "string",
+      "minLength": 1
+    },
+    "trust": {
+      "type": "string",
+      "enum": ["certified", "community", "local"]
     },
     "entry": {
       "type": "string"
@@ -22,6 +28,50 @@
       "items": {
         "type": "string"
       }
+    },
+    "compatibility": {
+      "type": "object",
+      "properties": {
+        "core": {
+          "type": "string"
+        },
+        "shell": {
+          "type": "string"
+        },
+        "wizard": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "certification": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": ["placeholder", "candidate", "approved"]
+        },
+        "lane": {
+          "type": "string"
+        }
+      },
+      "required": ["status"],
+      "additionalProperties": false
+    },
+    "source": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["github", "package", "local"]
+        },
+        "location": {
+          "type": "string"
+        }
+      },
+      "required": ["type", "location"],
+      "additionalProperties": false
     }
-  }
+  },
+  "additionalProperties": false
 }
