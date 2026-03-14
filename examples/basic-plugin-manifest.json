@@ -1,0 +1,9 @@
+{
+  "name": "demo-plugin",
+  "version": "0.1.0",
+  "entry": "plugins/demo:main",
+  "capabilities": [
+    "manifest.read",
+    "workflow.assist"
+  ]
+}
