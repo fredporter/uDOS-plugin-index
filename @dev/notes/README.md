@@ -1,3 +1,3 @@
 # `@dev/notes`
 
-Repo-local notes live here.
+Keep only current repo-owned plugin-index notes here.
