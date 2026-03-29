@@ -37,12 +37,11 @@ This repo describes what can plug into the family; it does not execute those plu
 
 ## Activation
 
-The v2 repo activation path is documented in `docs/activation.md`.
-The `v2.0.1` registry foundation is documented in
-`docs/v2.0.1-registry-foundation.md`.
+The repo activation path is documented in `docs/activation.md`.
+The registry foundation is documented in `docs/v2.0.1-registry-foundation.md`.
 
 Run the current repo validation entrypoint with:
 
 ```bash
-scripts/run-plugin-index-checks.sh
+bash scripts/run-plugin-index-checks.sh
 ```
