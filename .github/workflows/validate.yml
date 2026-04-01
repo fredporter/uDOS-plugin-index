@@ -3,15 +3,26 @@ name: Validate
 on:
   push:
     branches:
-      - develop
+      - main
   pull_request:
     branches:
-      - develop
       - main
   workflow_dispatch:
 
+permissions:
+  contents: read
+
 jobs:
-  validate:
-    uses: fredporter/uDOS-dev/.github/workflows/validate.yml@main
-    with:
-      governance_mode: public
+  plugin-index:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Run plugin index checks
+        run: bash scripts/run-plugin-index-checks.sh
